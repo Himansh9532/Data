@@ -1,0 +1,6 @@
+1. Make Visualization for the distribuition of Customer Acquistion Cost.
+2. Create a Visualization for the revenue by the customer. 
+3. Compare The Cost of acquistions across various channels and determine which ones are the most and last profitable?
+4. Find Out which channels are most and  least effective at c
+5. Calculate the total revenue by channel and analyze the most and least Profit channels in term of generating revenue .
+6 . calculate the return on investment for each Channel.
