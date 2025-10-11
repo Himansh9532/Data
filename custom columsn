@@ -1,0 +1,12 @@
+let
+    TransformColumnNames = (inputTable as table) =>
+    let
+        // Step 1: Replace underscores with spaces
+        Remove_Underscores = Table.TransformColumnNames(inputTable, each Text.Replace(_, "_", " ")),
+        
+        // Step 2: Convert to Proper Case
+        ProperCase = Table.TransformColumnNames(Remove_Underscores, Text.Proper)
+    in
+        ProperCase
+in
+    TransformColumnNames
