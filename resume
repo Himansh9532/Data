@@ -1,0 +1,62 @@
+
+from pypdf import PdfReader
+import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+reader = PdfReader('/content/Himanshu_CV (2).pdf')
+text = ""
+for page in reader.pages:
+    text += page.extract_text()
+
+
+# 2. Clean Resume Text
+
+def clean_text(text):
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9\s]', ' ', text)
+    return text
+
+resume = clean_text(text)
+
+
+jd = [
+    "python","sql","excel","power bi","tableau","data analysis","data analytics",
+    "machine learning","deep learning","tensorflow","keras","scikit",
+    "numpy","pandas","matplotlib","seaborn",
+    "statistics","etl","data cleaning","data preprocessing",
+    "azure","data factory","databricks","api",
+    "nlp","computer vision","deployment","streamlit","django"
+]
+
+#4. Keyword Match Score (40%)
+found = 0
+for kw in jd:
+    if kw in resume:
+        found += 1
+keyword_score = (found / len(jd)) * 40
+
+ #5. Cosine Similarity Score (60%)
+vectorizer = TfidfVectorizer()
+vectors = vectorizer.fit_transform([resume, " ".join(jd)])
+similarity = cosine_similarity(vectors[0], vectors[1])[0][0]
+cosine_score = similarity * 60
+
+#6. Final ATS Score
+
+ats_score = keyword_score + cosine_score
+
+
+# 7. Result===
+print("Matched Keywords:", found, "/", len(jd))
+print("Keyword Score:", round(keyword_score,2), "/ 40")
+print("Cosine Similarity:", round(similarity,2))
+print("Cosine Score:", round(cosine_score,2), "/ 60")
+print("\nFINAL ATS SCORE:", round(ats_score,2), "/ 100")
+
+if ats_score >= 75:
+    print("Status: Excellent – Resume will pass ATS")
+elif ats_score >= 60:
+    print("Status: Good – Minor improvements needed")
+else:
+    print("Status: Weak – Resume needs optimization")
