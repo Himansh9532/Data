@@ -1,0 +1,16 @@
+,emp_id,name,salary,department,hire_date,email,phone,city,job_role,manager_id
+0,1,Amit,60000,IT,2022-01-15,amit@gmail.com,9876543210,Delhi,Developer,5
+1,2,Rahul,45000,HR,2021-03-10,,9876543211,Mumbai,HR Manager,6
+2,3,Sneha,70000,IT,2023-06-20,sneha@gmail.com,,Delhi,Developer,5
+3,4,Karan,30000,Sales,2020-11-05,karan@gmail.com,9876543213,Pune,Sales Exec,7
+4,5,Neha,90000,IT,2019-09-12,neha@gmail.com,9876543214,Delhi,Team Lead,
+5,6,Vikas,80000,HR,2018-07-25,vikas@gmail.com,9876543215,Mumbai,HR Head,
+6,7,Arjun,75000,Sales,2022-12-01,arjun@gmail.com,9876543216,Pune,Manager,
+7,8,Sahil,20000,Admin,2023-01-10,,9876543217,Delhi,Clerk,6
+8,9,Riya,50000,Finance,2022-08-18,riya@gmail.com,9876543218,Jaipur,Analyst,10
+9,10,Ankit,95000,Finance,2017-05-30,ankit@gmail.com,,Jaipur,Manager,
+10,11,Tarun,40000,IT,2023-02-11,tarun@gmail.com,9876543220,Delhi,Tester,5
+11,12,Varun,55000,HR,2021-09-09,varun@gmail.com,9876543221,Mumbai,Recruiter,6
+12,13,Suresh,25000,Admin,2020-04-14,,9876543222,Delhi,Support,6
+13,14,Rohit,85000,IT,2022-10-22,rohit@gmail.com,9876543223,Delhi,Architect,5
+14,15,Aman,60000,Finance,2023-03-03,aman@gmail.com,9876543224,Jaipur,Accountant,10
